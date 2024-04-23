@@ -80,7 +80,10 @@ public record Issue
     public string Software { get; set; } = string.Empty;
     public DateTimeOffset CreatedAt { get; set; }
     public IssueStatus Status { get; set; }
+    public SupportInfo Support { get; set; } = new("Bob Smith", "Bob@aol.com", "555-1222");
 }
+
+public record SupportInfo(string Name, string Email, string Phone);
 
 public enum IssueStatus { Created }
 
